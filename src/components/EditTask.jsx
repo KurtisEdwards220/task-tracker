@@ -8,7 +8,7 @@ function EditTask({ task, taskList, setTaskList }) {
   useEffect(() => {
     setProjectName(task.projectName);
     setTaskDescription(task.taskDescription);
-  }, []);
+  }, [task.projectName, task.taskDescription]);
 
   const handleInput = (e) => {
     const { name, value } = e.target;

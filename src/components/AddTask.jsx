@@ -26,7 +26,11 @@ function AddTask({ taskList, setTaskList }) {
     if (!projectName) {
       setErrorMessage('Please enter a project name.');
     } else {
-      setTaskList([...taskList, { projectName, taskDescription }]);
+      let timestamp = new Date().getTime();
+      setTaskList([
+        ...taskList,
+        { projectName, taskDescription, timestamp: timestamp },
+      ]);
       setAddModal(false);
       setProjectName('');
       setTaskDescription('');
